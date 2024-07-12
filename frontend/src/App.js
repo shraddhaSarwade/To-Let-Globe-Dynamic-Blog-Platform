@@ -1,37 +1,30 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-// import BlogList from "./BlogList";
-import BlogContainer from "./BlogContainer";
-import Toggle from "./Toggle";
+import React from "react";
+import Allblogs from "./Allblogs";
+import CreateBlog from "./CreateBlog";
+import AuthPage from "./AuthPage";
+import Blog from "./Blog";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const [backendData, setBackendData] = useState([{}]);
-
-  useEffect(() => {
-    async function getDataFromBackend() {
-      const response = await fetch("/blogs");
-      const allBlogs = await response.json();
-      console.log(allBlogs);
-    }
-    getDataFromBackend();
-  }, []);
-
   return (
-    <div>
-      <Navbar />
-
-      <div className="insights container mt-4 text-center">
-        <h2>Our Insights and Stories</h2>
-        <p>Lorem Ipsum dolor sit amet consesctetur.Eu tincidunt.</p>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/blogs" element={<Allblogs />} />
+        </Routes>
+        <Routes>
+          <Route path="/showBlog" element={<Blog />} />
+        </Routes>
+        <Routes>
+          <Route path="/authPage" element={<AuthPage />} />
+        </Routes>
+        <Routes>
+          <Route path="/createBlog" element={<CreateBlog />} />
+        </Routes>
       </div>
-
-      <Toggle />
-      <BlogContainer />
-
-      <Footer />
-    </div>
+    </Router>
   );
 }
 

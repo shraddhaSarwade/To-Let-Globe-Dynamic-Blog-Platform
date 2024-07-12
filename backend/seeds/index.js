@@ -20,6 +20,11 @@ const seedDB = async () => {
       author: blog_seed_data[i].author,
       content: blog_seed_data[i].content,
       image: blog_seed_data[i].image,
+      date: blog_seed_data[i].date,
+      role: blog_seed_data[i].role,
+      category: blog_seed_data[i].category,
+      views: blog_seed_data[i].views,
+      likes: blog_seed_data[i].likes,
     });
     await blog.save();
   }

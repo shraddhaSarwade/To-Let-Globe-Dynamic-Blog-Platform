@@ -1,0 +1,14 @@
+.page-link {
+  background-color: #171717;
+  border: none;
+  color: white;
+}
+
+.page-link:hover {
+  color: #5aa79f;
+  background-color: #171717;
+}
+
+.disabled {
+  background-color: #171717;
+}

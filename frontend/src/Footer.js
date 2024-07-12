@@ -77,10 +77,10 @@ function Footer() {
             </div>
           </div>
           <div class="row mt-3">
-            <div class="col-md-6">
+            <div class="col-md-9">
               <p>&copy; 2023 To-Let Globe -- Lucknow</p>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-3">
               <a href="#" class="m-2">
                 <FacebookIcon />
               </a>

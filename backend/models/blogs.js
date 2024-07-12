@@ -6,6 +6,11 @@ const blogSchema = new Schema({
   author: String,
   content: String,
   image: String,
+  role: String,
+  category: String,
+  views: Number,
+  likes: Number,
+  date: Date,
 });
 
 const Blog = mongoose.model("Blog", blogSchema);
