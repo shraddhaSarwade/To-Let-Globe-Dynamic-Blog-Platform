@@ -11,6 +11,8 @@ module.exports = [
     category: "News & Events",
     views: "15",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title: "Collaboration and Partnership Update!",
@@ -24,6 +26,8 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title: "Collaboration and Partnership Update!",
@@ -36,6 +40,8 @@ module.exports = [
     category: "News & Events",
     views: "08",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title: "Collaboration and Partnership Update!",
@@ -49,6 +55,8 @@ module.exports = [
     category: "News & Events",
     views: "22",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title: "Collaboration and Partnership Update!",
@@ -62,6 +70,8 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title:
@@ -76,6 +86,8 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title:
@@ -89,6 +101,8 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title: "Collaboration and Partnership Update!",
@@ -102,6 +116,8 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title:
@@ -115,6 +131,8 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title:
@@ -128,6 +146,8 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title:
@@ -141,6 +161,8 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title:
@@ -154,6 +176,8 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
   {
     title:
@@ -167,5 +191,7 @@ module.exports = [
     category: "News & Events",
     views: "20",
     likes: "13",
+    intro:
+      "This blog explains the business principles and advantages offered by to let globe, the advantages of choosing to-let globe for resnting and other solutions",
   },
 ];

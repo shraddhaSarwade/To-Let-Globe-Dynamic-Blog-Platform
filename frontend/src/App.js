@@ -15,7 +15,7 @@ function App() {
           <Route path="/blogs" element={<Allblogs />} />
         </Routes>
         <Routes>
-          <Route path="/showBlog" element={<Blog />} />
+          <Route path="/showBlog/:id" element={<Blog />} />
         </Routes>
         <Routes>
           <Route path="/authPage" element={<AuthPage />} />

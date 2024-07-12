@@ -11,6 +11,7 @@ const blogSchema = new Schema({
   views: Number,
   likes: Number,
   date: Date,
+  intro: String,
 });
 
 const Blog = mongoose.model("Blog", blogSchema);

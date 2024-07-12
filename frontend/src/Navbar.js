@@ -4,7 +4,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg custom-navbar border-bottom border-secondary">
+      <nav class="navbar navbar-expand-lg custom-navbar" id="navbarborder">
         <div class="container-fluid">
           {/* <div> */}
           <a class="navbar-brand" href="#">

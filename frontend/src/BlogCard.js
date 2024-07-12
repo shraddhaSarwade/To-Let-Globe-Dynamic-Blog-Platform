@@ -3,8 +3,13 @@ import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 import "./BlogCard.css";
+import DateCategory from "./DateCategory";
+import Views from "./Views";
+import Likes from "./Likes";
+import AuthorDetails from "./AuthorDetails";
 
 const BlogCard = ({
+  id,
   title,
   author,
   content,
@@ -14,6 +19,7 @@ const BlogCard = ({
   views,
   likes,
   date,
+  intro,
 }) => {
   return (
     <div class="card" style={{ width: "30%", height: "70vh" }}>
@@ -28,7 +34,7 @@ const BlogCard = ({
       <div class="row">
         <div class="card-body" id="#nopadding">
           <p class="card-text">
-            {date}|<a href="#">{category}</a>
+            <DateCategory date={date} category={category} />
           </p>
 
           <div
@@ -49,17 +55,33 @@ const BlogCard = ({
                 marginBottom: "16px",
               }}
             >
-              {content}
+              {intro}
             </p>
           </div>
 
           <div>
-            <a class="readmore btn" href="#">
+            <a class="readmore btn" href={`/showBlog/${id}`}>
               Read More <TrendingFlatIcon />
             </a>
           </div>
 
           <div class="container-fluid p-0">
+            <div class="row">
+              <div class="col-8">
+                <AuthorDetails author={author} role={role} />
+              </div>
+              <div class="col-4 p-0 d-flex justify-content-between">
+                <div class="col-6 p-0 d-inline">
+                  <Views views={views} />
+                </div>
+                <div class="col-5 p-0 d-inline">
+                  <Likes likes={likes} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* <div class="container-fluid p-0">
             <div class="row justify-content-between">
               <div class="col-2 p-0">
                 <img
@@ -77,14 +99,8 @@ const BlogCard = ({
                   </div>
 
                   <div class="blogmetadata col-4 p-0">
-                    <span>
-                      <VisibilityTwoToneIcon />
-                      {views}
-                    </span>
-                    <span>
-                      <FavoriteBorderIcon />
-                      {likes}
-                    </span>
+                    <Views views={views} />
+                    <Likes likes={likes} />
                   </div>
                 </div>
 
@@ -93,7 +109,7 @@ const BlogCard = ({
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -25,3 +25,7 @@
 .nav-link:hover {
   color: black !important;
 }
+
+#navbarborder {
+  border-bottom: 1px solid #2f3846;
+}

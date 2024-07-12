@@ -21,7 +21,8 @@ function BlogContainer() {
     <div class="container BlogContainer">
       {backendData.map((datapt, i) => (
         <BlogCard
-          key={datapt._id}
+          //   key={datapt._id}
+          id={datapt._id}
           title={datapt.title}
           author={datapt.author}
           content={datapt.content}
@@ -31,6 +32,7 @@ function BlogContainer() {
           views={datapt.views}
           likes={datapt.likes}
           date={datapt.date}
+          intro={datapt.intro}
         />
       ))}
     </div>
