@@ -45,7 +45,7 @@ function Navbar() {
                 </a>
               </li>
               <li class="nav-item rounded-pill">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/blogs">
                   Blog
                 </a>
               </li>
