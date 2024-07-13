@@ -1,7 +1,8 @@
 import React from "react";
 import Allblogs from "./Allblogs";
 import CreateBlog from "./CreateBlog";
-import AuthPage from "./AuthPage";
+import Login from "./Login";
+import Register from "./Register";
 import Blog from "./Blog";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -18,7 +19,10 @@ function App() {
           <Route path="/showBlog/:id" element={<Blog />} />
         </Routes>
         <Routes>
-          <Route path="/authPage" element={<AuthPage />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Routes>
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Routes>
           <Route path="/createBlog" element={<CreateBlog />} />

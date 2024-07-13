@@ -7,6 +7,8 @@ import DateCategory from "./DateCategory";
 import Views from "./Views";
 import Likes from "./Likes";
 import AuthorDetails from "./AuthorDetails";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const BlogCard = ({
   id,
@@ -21,6 +23,35 @@ const BlogCard = ({
   date,
   intro,
 }) => {
+  const navigate = useNavigate();
+
+  const handleViews = () => {
+    const dataToDB = {
+      id: id,
+      title: title,
+      author: author,
+      content: content,
+      image: image,
+      role: role,
+      category: category,
+      views: views + 1,
+      likes: likes,
+      date: date,
+      intro: intro,
+    };
+    axios
+      .post(`/blogs/updateViews/${id}`, dataToDB)
+      .then((response) => {
+        console.log("Success:", response.data);
+        // Redirect to the /blogs page
+        navigate(`/showBlog/${id}`);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle error actions, e.g., show error message
+      });
+  };
+
   return (
     <div class="card" style={{ width: "30%", height: "70vh" }}>
       {/* <div class="card" style={{ width: "30%" }}> */}
@@ -60,7 +91,8 @@ const BlogCard = ({
           </div>
 
           <div>
-            <a class="readmore btn" href={`/showBlog/${id}`}>
+            {/* <a class="readmore btn" onClick={handleViews} href={`/showBlog/${id}`}> */}
+            <a class="readmore btn" onClick={handleViews}>
               Read More <TrendingFlatIcon />
             </a>
           </div>
@@ -80,36 +112,6 @@ const BlogCard = ({
               </div>
             </div>
           </div>
-
-          {/* <div class="container-fluid p-0">
-            <div class="row justify-content-between">
-              <div class="col-2 p-0">
-                <img
-                  class="rounded-circle"
-                  src="avatar.png"
-                  width="47px"
-                  alt="..."
-                />
-              </div>
-
-              <div class="col-10">
-                <div class="row justify-content-between">
-                  <div class="col-8 p-0">
-                    <span>{author}</span>
-                  </div>
-
-                  <div class="blogmetadata col-4 p-0">
-                    <Views views={views} />
-                    <Likes likes={likes} />
-                  </div>
-                </div>
-
-                <div class="row">
-                  <span class="blogmetadata p-0">{role}</span>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

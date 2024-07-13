@@ -4,12 +4,12 @@ import "./Category.css";
 
 const Category = ({ title, imgurl }) => {
   return (
-    <div id="categoryCard" class="card" style={{ width: "25%" }}>
-      <img src={imgurl} class="card-img-top" alt="..." />
-      <div class="card-body">
-        <p class="card-text">
+    <div id="categoryCard" className="card" style={{ width: "25%" }}>
+      <img src={imgurl} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <p className="card-text">
           {title}{" "}
-          <a class="btn" href="#">
+          <a className="btn" href="#">
             <TrendingFlatIcon style={{ color: "#5aa79f" }} />
           </a>
         </p>

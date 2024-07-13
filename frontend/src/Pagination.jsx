@@ -5,32 +5,32 @@ import "./Pagination.css";
 
 function Pagination() {
   return (
-    <div class="Pagination">
+    <div className="Pagination">
       <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item">
-            <a class="page-link" href="#" tabIndex="-1">
+        <ul className="pagination justify-content-center">
+          <li className="page-item">
+            <a className="page-link" href="#" tabIndex="-1">
               <NavigateBeforeIcon />
               Previous
             </a>
           </li>
-          <li class="page-item">
-            <a class="page-link" href="#">
+          <li className="page-item">
+            <a className="page-link" href="#">
               1
             </a>
           </li>
-          <li class="page-item">
-            <a class="page-link" href="#">
+          <li className="page-item">
+            <a className="page-link" href="#">
               2
             </a>
           </li>
-          <li class="page-item">
-            <a class="page-link" href="#">
+          <li className="page-item">
+            <a className="page-link" href="#">
               3
             </a>
           </li>
-          <li class="page-item">
-            <a class="page-link" href="#">
+          <li className="page-item">
+            <a className="page-link" href="#">
               Next <NavigateNextIcon />
             </a>
           </li>

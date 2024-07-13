@@ -14,6 +14,7 @@ mongoose
   });
 
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(methodOverride("_method"));
 
 app.get("/blogs", async (req, res) => {
@@ -26,11 +27,17 @@ app.get("/blogs", async (req, res) => {
 //   res.render("campgrounds/new");
 // });
 
-// app.post("/blogs/new", async (req, res) => {
-//   const newBlog = new Blog(req.body.blog);
-//   await newBlog.save();
-//   res.json(`/blogs/${campground._id}`);
-// });
+app.post("/blogs/new", async (req, res) => {
+  const newBlog = new Blog(req.body);
+  await newBlog.save();
+  res.send("success");
+});
+
+app.post("/blogs/updateViews/:id", async (req, res) => {
+  const { id } = req.params;
+  const updatedBlog = await Blog.findByIdAndUpdate(id, req.body);
+  res.send("success");
+});
 
 // app.get("/campgrounds/:id/edit", async (req, res) => {
 //   const { id } = req.params;

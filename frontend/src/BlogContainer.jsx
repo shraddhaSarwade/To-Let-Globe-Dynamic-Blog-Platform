@@ -10,7 +10,7 @@ function BlogContainer() {
     async function getDataFromBackend() {
       const response = await fetch("/blogs");
       const allBlogs = await response.json();
-      setBackendData(allBlogs);
+      setBackendData(allBlogs.reverse());
     }
     getDataFromBackend();
   }, []);
@@ -18,7 +18,7 @@ function BlogContainer() {
   //   console.log(backendData);
 
   return (
-    <div class="container BlogContainer">
+    <div className="container BlogContainer">
       {backendData.map((datapt, i) => (
         <BlogCard
           //   key={datapt._id}

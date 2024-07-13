@@ -69,8 +69,12 @@ function Blog() {
           <img class="img-fluid" src={backendData.image} height="70vh" />
         </div>
 
-        <div class="row my-5" id="content">
-          {backendData.content}
+        <div
+          class="row my-5"
+          id="content"
+          dangerouslySetInnerHTML={{ __html: backendData.content }}
+        >
+          {/* {backendData.content} */}
         </div>
 
         <div class="row">
