@@ -6,6 +6,7 @@ import Views from "./Views";
 import Likes from "./Likes";
 import AuthorDetails from "./AuthorDetails";
 import "./Blog.css";
+import axios from "axios";
 
 function Blog() {
   const { id } = useParams();
@@ -14,6 +15,7 @@ function Blog() {
 
   useEffect(() => {
     async function getDataFromBackend() {
+      // const blog = await axios.get(`/blogs/${id}`);
       const response = await fetch(`/blogs/${id}`);
       const blog = await response.json();
       setBackendData(blog);

@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BlogContainer from "./BlogContainer";
 import Toggle from "./Toggle";
-import Pagination from "./Pagination";
 import CategoryContanier from "./CategoryContainer";
 
 function Allblogs() {
@@ -18,7 +17,6 @@ function Allblogs() {
 
       <Toggle />
       <BlogContainer />
-      <Pagination />
       <CategoryContanier />
 
       <Footer />
