@@ -1,16 +1,38 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Navbar from "./Navbar";
 import "./Login.css";
 import { TextField, Button, Container, Box, Typography } from "@mui/material";
 import { AccountCircle, Lock } from "@mui/icons-material";
 import Link from "@mui/material/Link";
+import axios from "axios";
 
 function Login() {
+  const navigate = useNavigate();
+
   const [loginData, setLoginData] = useState({ username: "", password: "" });
 
   const handleChange = (evt) => {
     setLoginData({ ...loginData, [evt.target.name]: evt.target.value });
-    console.log(loginData);
+  };
+
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+    await axios
+      .post("/login", loginData)
+      .then((response) => {
+        console.log(response.data.isLogin);
+        if (response.data.isLogin === false) {
+          alert("Invalid Credentials! Please Try Again");
+        } else {
+          alert("Login Successful!");
+          navigate("/blogs");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   };
 
   return (
@@ -25,7 +47,7 @@ function Login() {
             Login
           </Typography>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <AccountCircle className="icon" />
               <TextField
@@ -35,7 +57,7 @@ function Login() {
                 value={loginData.username}
                 onChange={handleChange}
                 InputProps={{
-                  disableUnderline: true,
+                  disableunderline: "true",
                   className: "form-control",
                 }}
               />
@@ -50,12 +72,12 @@ function Login() {
                 value={loginData.password}
                 onChange={handleChange}
                 InputProps={{
-                  disableUnderline: true,
+                  disableunderline: "true",
                   className: "form-control",
                 }}
               />
             </div>
-            <Button variant="contained" className="btn-custom">
+            <Button type="submit" variant="contained" className="btn-custom">
               LOGIN
             </Button>
           </form>

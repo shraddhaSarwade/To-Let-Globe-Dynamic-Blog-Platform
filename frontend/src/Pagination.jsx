@@ -4,8 +4,6 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import "./Pagination.css";
 
 function Pagination({ noOfBlogs, paginate, currentPg }) {
-  console.log(noOfBlogs);
-
   const paginationLIs = [];
   const totalPgs = Math.ceil(noOfBlogs / 6);
 
@@ -13,7 +11,6 @@ function Pagination({ noOfBlogs, paginate, currentPg }) {
     paginationLIs.push(i);
   }
 
-  console.log(paginationLIs);
   return (
     <div className="Pagination">
       <nav aria-label="Page navigation example">
@@ -21,16 +18,17 @@ function Pagination({ noOfBlogs, paginate, currentPg }) {
           <li
             className={`page-item ${currentPg === 1 ? "disabled" : ""}`}
             onClick={() => {
-              paginate(currentPg - 1);
+              paginate(currentPg !== 1 ? currentPg - 1 : currentPg);
             }}
           >
             <a className="page-link" href="#" tabIndex="-1">
-              <NavigateBeforeIcon />
+              <NavigateBeforeIcon style={{ fontSize: "medium" }} />
               Previous
             </a>
           </li>
-          {paginationLIs.map((pgNo) => (
+          {paginationLIs.map((pgNo, i) => (
             <li
+              key={i}
               className={`page-item ${currentPg === pgNo ? "active" : ""}`}
               onClick={() => {
                 paginate(pgNo);
@@ -45,11 +43,11 @@ function Pagination({ noOfBlogs, paginate, currentPg }) {
           <li
             className={`page-item ${currentPg === totalPgs ? "disabled" : ""}`}
             onClick={() => {
-              paginate(currentPg + 1);
+              paginate(currentPg !== totalPgs ? currentPg + 1 : currentPg);
             }}
           >
             <a className="page-link" href="#">
-              Next <NavigateNextIcon />
+              Next <NavigateNextIcon style={{ fontSize: "medium" }} />
             </a>
           </li>
         </ul>

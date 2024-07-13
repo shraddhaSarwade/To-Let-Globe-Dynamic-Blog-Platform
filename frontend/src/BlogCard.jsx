@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
@@ -25,7 +25,64 @@ const BlogCard = ({
 }) => {
   const navigate = useNavigate();
 
-  const handleViews = () => {
+  const [like, setLike] = useState(false);
+
+  const handleLikes = async () => {
+    console.log("clicked");
+    if (like === false) {
+      const dataToDB = {
+        id: id,
+        title: title,
+        author: author,
+        content: content,
+        image: image,
+        role: role,
+        category: category,
+        views: views,
+        likes: likes + 1,
+        date: date,
+        intro: intro,
+      };
+      await axios
+        .post(`/blogs/updateLikes/${id}`, dataToDB)
+        .then((response) => {
+          console.log("Success:", response.data);
+          // Redirect to the /blogs page
+          setLike(!like);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // Handle error actions, e.g., show error message
+        });
+    } else {
+      const dataToDB = {
+        id: id,
+        title: title,
+        author: author,
+        content: content,
+        image: image,
+        role: role,
+        category: category,
+        views: views,
+        likes: likes - 1,
+        date: date,
+        intro: intro,
+      };
+      await axios
+        .post(`/blogs/updateLikes/${id}`, dataToDB)
+        .then((response) => {
+          console.log("Success:", response.data);
+          // Redirect to the /blogs page
+          setLike(!like);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          // Handle error actions, e.g., show error message
+        });
+    }
+  };
+
+  const handleViews = async () => {
     const dataToDB = {
       id: id,
       title: title,
@@ -39,7 +96,7 @@ const BlogCard = ({
       date: date,
       intro: intro,
     };
-    axios
+    await axios
       .post(`/blogs/updateViews/${id}`, dataToDB)
       .then((response) => {
         console.log("Success:", response.data);
@@ -53,18 +110,18 @@ const BlogCard = ({
   };
 
   return (
-    <div class="card" style={{ width: "30%", height: "70vh" }}>
+    <div className="card" style={{ width: "30%", height: "70vh" }}>
       {/* <div class="card" style={{ width: "30%" }}> */}
       <img
         src={image}
-        class="card-img-top"
+        className="card-img-top"
         alt="..."
         height="40%"
         style={{ objectFit: "cover" }}
       />
-      <div class="row">
-        <div class="card-body" id="#nopadding">
-          <p class="card-text">
+      <div className="row">
+        <div className="card-body" id="#nopadding">
+          <p className="card-text">
             <DateCategory date={date} category={category} />
           </p>
 
@@ -76,9 +133,9 @@ const BlogCard = ({
               //   whiteSpace: "nowrap",
             }}
           >
-            <h5 class="card-title">{title}</h5>
+            <h5 className="card-title">{title}</h5>
             <p
-              class="card-text"
+              className="card-text"
               style={{
                 height: "20vh",
                 overflow: "hidden",
@@ -92,22 +149,22 @@ const BlogCard = ({
 
           <div>
             {/* <a class="readmore btn" onClick={handleViews} href={`/showBlog/${id}`}> */}
-            <a class="readmore btn" onClick={handleViews}>
+            <a className="readmore btn" onClick={handleViews}>
               Read More <TrendingFlatIcon />
             </a>
           </div>
 
-          <div class="container-fluid p-0">
-            <div class="row">
-              <div class="col-8">
+          <div className="container-fluid p-0">
+            <div className="row">
+              <div className="col-8">
                 <AuthorDetails author={author} role={role} />
               </div>
-              <div class="col-4 p-0 d-flex justify-content-between">
-                <div class="col-6 p-0 d-inline">
+              <div className="col-4 p-0 d-flex justify-content-between">
+                <div className="col-6 p-0 d-inline">
                   <Views views={views} />
                 </div>
-                <div class="col-5 p-0 d-inline">
-                  <Likes likes={likes} />
+                <div className="col-5 p-0 d-inline">
+                  <Likes likes={likes} handleLikes={handleLikes} />
                 </div>
               </div>
             </div>

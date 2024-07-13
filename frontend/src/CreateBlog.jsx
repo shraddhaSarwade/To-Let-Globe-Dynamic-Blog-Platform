@@ -41,28 +41,28 @@ function CreateBlog() {
     }));
   };
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault(); // Prevent the default form submission
-    // Send the POST request
+    const response = await axios.post("/getUserData");
+
+    let { username, role } = response.data;
+    if (role === "content-creator") {
+      role = "Content Creator";
+    } else if (role === "admin") {
+      role = "Admin";
+    }
+
     const dataToDB = {
       ...formData,
-      author: "Anoynymous",
-      role: "Content Creator",
+      author: username,
+      role: role,
       views: 0,
       likes: 0,
       date: new Date(),
     };
-    axios
-      .post("/blogs/new", dataToDB)
-      .then((response) => {
-        console.log("Success:", response.data);
-        // Redirect to the /blogs page
-        navigate("/blogs");
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        // Handle error actions, e.g., show error message
-      });
+
+    const response2 = await axios.post("/blogs/new", dataToDB);
+    navigate("/blogs");
   };
 
   return (

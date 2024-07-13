@@ -23,64 +23,60 @@ function Blog() {
     getDataFromBackend();
   }, []);
 
-  console.log(backendData);
-
   return (
     <div>
       <Navbar />
-      <div class="container" id="blogContainer">
+      <div className="container" id="blogContainer">
         <DateCategory date={backendData.date} category={backendData.category} />
-        <h1 class="my-3">{backendData.title}</h1>
-        <div class="row">
-          <div class="col-2">
+        <h1 className="my-3">{backendData.title}</h1>
+        <div className="row">
+          <div className="col-2">
             <AuthorDetails
               author={backendData.author}
               role={backendData.role}
             />
           </div>
-          <div class="col-10"></div>
+          <div className="col-10"></div>
         </div>
         <div
-          class="row d-flex justify-content-between py-3 my-3"
+          className="row d-flex justify-content-between py-3 my-3"
           id="borderrow"
         >
-          <div class="col-2 p-0 d-flex flex-start">
+          <div className="col-2 p-0 d-flex flex-start">
             {/* <div class="col-4 p-0 d-flex justify-content-between"> */}
-            <div class="col-4 p-0 d-inline">
+            <div className="col-4 p-0 d-inline">
               <Views views={backendData.views} />
             </div>
-            <div class="col-4 p-0 d-inline">
+            <div className="col-4 p-0 d-inline">
               <Likes likes={backendData.likes} />
             </div>
             {/* </div> */}
             {/* <Views views={backendData.views} /> */}
             {/* <Likes likes={backendData.likes} /> */}
           </div>
-          <div class="col-1">
-            <span class="text-decoration-underline" id="read">
+          <div className="col-1">
+            <span className="text-decoration-underline" id="read">
               6 min read
             </span>
           </div>
         </div>
 
-        <div class="row my-5" id="intro">
+        <div className="row my-5" id="intro">
           {backendData.intro}
         </div>
 
-        <div class="row">
-          <img class="img-fluid" src={backendData.image} height="70vh" />
+        <div className="row">
+          <img className="img-fluid" src={backendData.image} height="70vh" />
         </div>
 
         <div
-          class="row my-5"
+          className="row my-5"
           id="content"
           dangerouslySetInnerHTML={{ __html: backendData.content }}
-        >
-          {/* {backendData.content} */}
-        </div>
+        ></div>
 
-        <div class="row">
-          <a class="btn btn-primary toLetButton" href="/blogs">
+        <div className="row">
+          <a className="btn btn-primary toLetButton" href="/blogs">
             Back to All Blogs
           </a>
         </div>

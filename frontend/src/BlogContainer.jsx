@@ -3,20 +3,46 @@ import "./BlogContanier.css";
 // import BlogCard from "./BlogCard";
 import BlogCard from "./BlogCard";
 import Pagination from "./Pagination";
+import Toggle from "./Toggle";
 
 function BlogContainer() {
   const [backendData, setBackendData] = useState([{}]);
 
+  const [isLatest, setIsLatest] = useState(true);
+
   const [currentPg, setCurrentPg] = useState(1);
 
+  async function getDataFromBackend() {
+    const response = await fetch("/blogs");
+    const allBlogs = await response.json();
+    setBackendData(allBlogs.reverse());
+  }
+
   useEffect(() => {
-    async function getDataFromBackend() {
-      const response = await fetch("/blogs");
-      const allBlogs = await response.json();
-      setBackendData(allBlogs.reverse());
-    }
     getDataFromBackend();
   }, []);
+
+  const handleClickLatest = () => {
+    getDataFromBackend();
+
+    setIsLatest(true);
+  };
+
+  const handleClickTrending = () => {
+    backendData.sort((a, b) => {
+      const sumA = a.views + a.likes;
+      const sumB = b.views + b.likes;
+
+      if (sumA > sumB) {
+        return -1;
+      }
+      if (sumA < sumB) {
+        return 1;
+      }
+    });
+    setBackendData(backendData);
+    setIsLatest(false);
+  };
 
   const indexOfLastBlog = 6 * currentPg;
   const indexOfFirstBlog = indexOfLastBlog - 6;
@@ -28,10 +54,16 @@ function BlogContainer() {
 
   return (
     <>
+      <Toggle
+        isLatest={isLatest}
+        handleClickLatest={handleClickLatest}
+        handleClickTrending={handleClickTrending}
+      />
+
       <div className="container BlogContainer">
-        {sixBlogData.map((datapt, i) => (
+        {sixBlogData.map((datapt) => (
           <BlogCard
-            //   key={datapt._id}
+            key={datapt._id}
             id={datapt._id}
             title={datapt.title}
             author={datapt.author}

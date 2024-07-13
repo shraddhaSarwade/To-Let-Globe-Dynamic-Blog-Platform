@@ -1,7 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import axios from "axios";
 
 function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const checkLoggedInStatus = async () => {
+    await axios
+      .post("/logInStatus")
+      .then((response) => {
+        console.log(response.data.isLoggedIn);
+        if (response.data.isLoggedIn) {
+          setIsLoggedIn(true);
+        } else {
+          setIsLoggedIn(false);
+        }
+        // Redirect to the /blogs page
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle error actions, e.g., show error message
+      });
+  };
+
+  const handleLogout = async () => {
+    await axios
+      .post("/logout")
+      .then((response) => {
+        setIsLoggedIn(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Handle error actions, e.g., show error message
+      });
+  };
+
+  useEffect(() => {
+    checkLoggedInStatus();
+  }, []);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg custom-navbar" id="navbarborder">
@@ -9,7 +46,7 @@ function Navbar() {
           {/* <div> */}
           <a className="navbar-brand" href="#">
             <img
-              src="logo.jpeg"
+              src="/logo.jpeg"
               alt=""
               style={{ width: "80px", height: "80px" }}
             />
@@ -54,9 +91,23 @@ function Navbar() {
                   Property Listing
                 </a>
               </li>
-              <li className="nav-item rounded-pill">
+              <li
+                className={`nav-item rounded-pill ${
+                  isLoggedIn ? "d-none" : ""
+                }`}
+              >
                 <a className="nav-link" href="/login">
                   Login
+                </a>
+              </li>
+              <li
+                className={`nav-item rounded-pill ${
+                  isLoggedIn ? "" : "d-none"
+                }`}
+                onClick={handleLogout}
+              >
+                <a className="nav-link" href="/login">
+                  Logout
                 </a>
               </li>
             </ul>

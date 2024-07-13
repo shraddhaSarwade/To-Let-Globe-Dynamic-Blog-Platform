@@ -5,11 +5,11 @@ import Category from "./Category";
 function CategoryContanier() {
   return (
     <>
-      <div class="container CategoryContainer">
-        <div class="row">
+      <div className="container CategoryContainer">
+        <div className="row">
           <h4 className="shift-right">Categories</h4>
         </div>
-        <div class="row">
+        <div className="row">
           <Category
             title="News & Events"
             imgurl="https://toletglobe.in/static/media/Rectangle6.6cb4e66e8ba4e49ef6a6.png"

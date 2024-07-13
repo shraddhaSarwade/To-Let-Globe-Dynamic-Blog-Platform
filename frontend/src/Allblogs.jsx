@@ -15,7 +15,6 @@ function Allblogs() {
         <p>Lorem Ipsum dolor sit amet consesctetur.Eu tincidunt.</p>
       </div>
 
-      <Toggle />
       <BlogContainer />
       <CategoryContanier />
 

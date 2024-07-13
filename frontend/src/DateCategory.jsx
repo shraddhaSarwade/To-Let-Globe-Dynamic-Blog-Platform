@@ -15,12 +15,12 @@ function DateCategory({ date, category }) {
 
   //JSX
   return (
-    <div>
+    <>
       <span id="date">{formattedDate} </span>
       <span id="category">
         <a href="#">{category}</a>
       </span>
-    </div>
+    </>
   );
 }
 

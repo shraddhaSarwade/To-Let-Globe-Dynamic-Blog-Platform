@@ -1,10 +1,10 @@
 import React from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
-function Likes({ likes }) {
+function Likes({ likes, handleLikes }) {
   return (
     <>
-      <span id="visIcon">
+      <span id="visIcon" onClick={handleLikes}>
         <FavoriteBorderIcon style={{ color: "#9da2af", fontSize: "medium" }} />
       </span>
       <span> </span>

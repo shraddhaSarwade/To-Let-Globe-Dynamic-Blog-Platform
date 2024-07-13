@@ -7,87 +7,87 @@ import XIcon from "@mui/icons-material/X";
 function Footer() {
   return (
     <>
-      <footer class="py-4 custom-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-3">
+      <footer className="py-4 custom-footer">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3">
               <h5>To Let Globe</h5>
-              <ul class="list-unstyled">
+              <ul className="list-unstyled">
                 <li>
-                  <a href="#" class="text-white">
+                  <a href="#" className="text-white">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-white">
+                  <a href="#" className="text-white">
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-white">
+                  <a href="#" className="text-white">
                     Contact
                   </a>
                 </li>
               </ul>
             </div>
-            <div class="col-md-3">
+            <div className="col-md-3">
               <h5>Services</h5>
-              <ul class="list-unstyled">
+              <ul className="list-unstyled">
                 <li>
-                  <a href="#" class="text-white">
+                  <a href="#" className="text-white">
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-white">
+                  <a href="#" className="text-white">
                     FAQs
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-white">
+                  <a href="#" className="text-white">
                     Testimonials
                   </a>
                 </li>
               </ul>
             </div>
-            <div class="col-md-3">
+            <div className="col-md-3">
               <h5>Contact</h5>
-              <ul class="list-unstyled">
+              <ul className="list-unstyled">
                 <li>
-                  <a href="#" class="text-white">
+                  <a href="#" className="text-white">
                     Email
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="text-white">
+                  <a href="#" className="text-white">
                     LinkedIn
                   </a>
                 </li>
               </ul>
             </div>
-            <div class="col-md-3">
+            <div className="col-md-3">
               <h5>Newsletter</h5>
-              <ul class="list-unstyled">
+              <ul className="list-unstyled">
                 <li>
-                  <a href="#" class="text-white">
+                  <a href="#" className="text-white">
                     Sign up to our Newsletter
                   </a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="row mt-3">
-            <div class="col-md-9">
+          <div className="row mt-3">
+            <div className="col-md-9">
               <p>&copy; 2023 To-Let Globe -- Lucknow</p>
             </div>
-            <div class="col-md-3">
-              <a href="#" class="m-2">
+            <div className="col-md-3">
+              <a href="#" className="m-2">
                 <FacebookIcon />
               </a>
-              <a href="#" class="m-2">
+              <a href="#" className="m-2">
                 <InstagramIcon />
               </a>
-              <a href="#" class="m-2">
+              <a href="#" className="m-2">
                 <XIcon />
               </a>
             </div>

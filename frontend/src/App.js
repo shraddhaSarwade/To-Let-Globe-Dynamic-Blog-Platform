@@ -14,17 +14,9 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/blogs" element={<Allblogs />} />
-        </Routes>
-        <Routes>
           <Route path="/showBlog/:id" element={<Blog />} />
-        </Routes>
-        <Routes>
           <Route path="/login" element={<Login />} />
-        </Routes>
-        <Routes>
           <Route path="/register" element={<Register />} />
-        </Routes>
-        <Routes>
           <Route path="/createBlog" element={<CreateBlog />} />
         </Routes>
       </div>

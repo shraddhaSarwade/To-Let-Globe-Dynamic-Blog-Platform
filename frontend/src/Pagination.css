@@ -9,6 +9,12 @@
   background-color: #171717;
 }
 
-.disabled {
+.pagination .page-item.active .page-link {
+  background-color: #5aa79f;
+  color: black;
+}
+
+.pagination .page-item.disabled .page-link {
   background-color: #171717;
+  color: grey;
 }
