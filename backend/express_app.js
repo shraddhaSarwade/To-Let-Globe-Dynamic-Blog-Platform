@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -6,15 +8,22 @@ const User = require("./models/user");
 const methodOverride = require("method-override");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
+const multer = require("multer");
+const { storage } = require("./cloudinary");
+
+const mongoDBAtlasURL = process.env.DB_URL;
 
 mongoose
-  .connect("mongodb://localhost:27017/To-Let-Globe-Blogs")
+  .connect(mongoDBAtlasURL)
+  //   .connect("mongodb://localhost:27017/To-Let-Globe-Blogs")
   .then(() => {
     console.log("Connected to database..");
   })
   .catch((err) => {
     console.log("Error connecting to the database..", err);
   });
+
+const upload = multer({ storage });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -78,7 +87,6 @@ app.post("/login", async (req, res) => {
           res.json({ isLogin: true });
         }
       });
-      //   res.send("Welcome");
     } else {
       console.log("Error");
       res.json({ isLogin: false });
@@ -105,8 +113,9 @@ app.post("/createBlog/auth", async (req, res) => {
   }
 });
 
-app.post("/blogs/new", async (req, res) => {
-  const newBlog = new Blog(req.body);
+app.post("/blogs/new", upload.single("image"), async (req, res) => {
+  const dataWithCloudinaryImgUrl = { ...req.body, image: req.file.path };
+  const newBlog = new Blog(dataWithCloudinaryImgUrl);
   await newBlog.save();
   res.send("success");
 });
