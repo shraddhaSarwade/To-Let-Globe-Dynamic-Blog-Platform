@@ -72,7 +72,7 @@ function CreateBlog() {
         "Content-Type": "multipart/form-data",
       },
     });
-    console.log(response2);
+    // console.log(response2);
     navigate("/blogs");
   };
 
@@ -140,22 +140,6 @@ function CreateBlog() {
                   onChange={handleChange}
                 />
               </div>
-
-              {/* <div className="form-group">
-                <label for="image" className="custom-label my-2 d-block">
-                  Upload Image
-                </label>
-                <input
-                  type="text"
-                  className
-                  
-                  ="form-control-file custom-input"
-                  id="image"
-                  value={formData.image}
-                  name="image"
-                  onChange={handleChange}
-                />
-              </div> */}
 
               <div className="form-group">
                 <label htmlFor="image" className="custom-label my-2 d-block">

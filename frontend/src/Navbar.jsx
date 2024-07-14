@@ -10,7 +10,7 @@ function Navbar() {
     await axios
       .post("/logInStatus")
       .then((response) => {
-        console.log(response.data.isLoggedIn);
+        // console.log(response.data.isLoggedIn);
         if (response.data.isLoggedIn) {
           setIsLoggedIn(true);
         } else {

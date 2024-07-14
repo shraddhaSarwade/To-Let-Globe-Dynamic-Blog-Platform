@@ -14,6 +14,7 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
+          <Route path="/" element={<Allblogs />} />
           {/* Route to display all blogs */}
           <Route path="/blogs" element={<Allblogs />} />
           {/* Route to display specific blog */}

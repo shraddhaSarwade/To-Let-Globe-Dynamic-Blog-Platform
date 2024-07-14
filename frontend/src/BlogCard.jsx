@@ -29,7 +29,7 @@ const BlogCard = ({
   const [like, setLike] = useState(false);
 
   const handleLikes = async () => {
-    console.log("clicked");
+    // console.log("clicked");
     if (like === false) {
       const dataToDB = {
         id: id,
@@ -47,7 +47,7 @@ const BlogCard = ({
       await axios
         .post(`/blogs/updateLikes/${id}`, dataToDB)
         .then((response) => {
-          console.log("Success:", response.data);
+          // console.log("Success:", response.data);
           // Redirect to the /blogs page
           setLike(!like);
         })
@@ -72,7 +72,7 @@ const BlogCard = ({
       await axios
         .post(`/blogs/updateLikes/${id}`, dataToDB)
         .then((response) => {
-          console.log("Success:", response.data);
+          // console.log("Success:", response.data);
           // Redirect to the /blogs page
           setLike(!like);
         })
@@ -100,7 +100,7 @@ const BlogCard = ({
     await axios
       .post(`/blogs/updateViews/${id}`, dataToDB)
       .then((response) => {
-        console.log("Success:", response.data);
+        // console.log("Success:", response.data);
         // Redirect to the /blogs page
         navigate(`/showBlog/${id}`);
       })
