@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
+import axios from "./axiosConfig";
 import Navbar from "./Navbar";
 import "./CreateBlog.css";
 import ReactQuill from "react-quill";

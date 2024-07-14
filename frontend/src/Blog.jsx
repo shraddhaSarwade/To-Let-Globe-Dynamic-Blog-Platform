@@ -6,7 +6,8 @@ import Views from "./Views";
 import Likes from "./Likes";
 import AuthorDetails from "./AuthorDetails";
 import "./Blog.css";
-import axios from "axios";
+// import axios from "axios";
+import axios from "./axiosConfig";
 
 // Component to Display a Single Blog
 function Blog() {
@@ -16,10 +17,8 @@ function Blog() {
 
   useEffect(() => {
     async function getDataFromBackend() {
-      // const blog = await axios.get(`/blogs/${id}`);
-      const response = await fetch(`/blogs/${id}`);
-      const blog = await response.json();
-      setBackendData(blog);
+      const blog = await axios.get(`/blogs/${id}`);
+      setBackendData(blog.data);
     }
     getDataFromBackend();
   }, []);

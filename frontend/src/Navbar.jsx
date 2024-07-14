@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
-import axios from "axios";
+// import axios from "axios";
+import axios from "./axiosConfig";
 
 // Component to Display the Navbar
 function Navbar() {

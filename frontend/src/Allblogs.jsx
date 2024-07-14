@@ -4,7 +4,6 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BlogContainer from "./BlogContainer";
-import Toggle from "./Toggle";
 import CategoryContanier from "./CategoryContainer";
 
 function Allblogs() {

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Toggle.css";
-import axios from "axios";
+// import axios from "axios";
+import axios from "./axiosConfig";
 import { useNavigate } from "react-router-dom";
 
 // Component to Render the Latest, Tending and Create Blog Buttons

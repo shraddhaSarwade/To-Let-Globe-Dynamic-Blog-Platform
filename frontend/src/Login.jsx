@@ -6,7 +6,8 @@ import "./Login.css";
 import { TextField, Button, Container, Box, Typography } from "@mui/material";
 import { AccountCircle, Lock } from "@mui/icons-material";
 import Link from "@mui/material/Link";
-import axios from "axios";
+// import axios from "axios";
+import axios from "./axiosConfig";
 
 // Component to Display the Login Page
 function Login() {

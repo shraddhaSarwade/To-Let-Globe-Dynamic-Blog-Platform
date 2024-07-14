@@ -1,4 +1,5 @@
-import axios from "axios";
+// import axios from "axios";
+import axios from "./axiosConfig";
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";

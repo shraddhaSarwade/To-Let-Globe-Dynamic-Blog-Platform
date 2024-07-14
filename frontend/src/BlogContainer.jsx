@@ -4,6 +4,8 @@ import "./BlogContanier.css";
 import BlogCard from "./BlogCard";
 import Pagination from "./Pagination";
 import Toggle from "./Toggle";
+// import axios from "axios";
+import axios from "./axiosConfig";
 
 // Component to Display Six Blogs from all Blog Data in Card form
 function BlogContainer() {
@@ -14,9 +16,8 @@ function BlogContainer() {
   const [currentPg, setCurrentPg] = useState(1);
 
   async function getDataFromBackend() {
-    const response = await fetch("/blogs");
-    const allBlogs = await response.json();
-    setBackendData(allBlogs.reverse());
+    const allBlogs = await axios.get("/blogs");
+    setBackendData(allBlogs.data.reverse());
   }
 
   useEffect(() => {

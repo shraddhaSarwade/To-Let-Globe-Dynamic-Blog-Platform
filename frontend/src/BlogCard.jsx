@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 import "./BlogCard.css";
 import DateCategory from "./DateCategory";
 import Views from "./Views";
 import Likes from "./Likes";
 import AuthorDetails from "./AuthorDetails";
-import axios from "axios";
+// import axios from "axios";
+import axios from "./axiosConfig";
 import { useNavigate } from "react-router-dom";
 
 //Component to display a Blog Card in all Blogs Page
