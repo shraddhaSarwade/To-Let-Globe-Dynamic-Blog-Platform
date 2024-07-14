@@ -1,6 +1,7 @@
 import React from "react";
 import "./DateCategory.css";
 
+// Component to Display the Date and Category of the blog
 function DateCategory({ date, category }) {
   //Extracting the date in correct format
   function formatDate(date) {
@@ -9,11 +10,9 @@ function DateCategory({ date, category }) {
     const year = date.getFullYear();
     return `${day} ${month}, ${year}`;
   }
-
   const dateObject = new Date(date);
   const formattedDate = formatDate(dateObject);
 
-  //JSX
   return (
     <>
       <span id="date">{formattedDate} </span>

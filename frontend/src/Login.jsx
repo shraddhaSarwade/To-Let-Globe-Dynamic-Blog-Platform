@@ -8,6 +8,7 @@ import { AccountCircle, Lock } from "@mui/icons-material";
 import Link from "@mui/material/Link";
 import axios from "axios";
 
+// Component to Display the Login Page
 function Login() {
   const navigate = useNavigate();
 

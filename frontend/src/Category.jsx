@@ -2,6 +2,7 @@ import React from "react";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 import "./Category.css";
 
+// Component to Display Category Card
 const Category = ({ title, imgurl }) => {
   return (
     <div id="categoryCard" className="card" style={{ width: "25%" }}>

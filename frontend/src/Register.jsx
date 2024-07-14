@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
-
 import {
   Container,
   TextField,
@@ -13,13 +12,12 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-  // ThemeProvider,
-  // createTheme,
 } from "@mui/material";
 import { AccountCircle, Lock, Person } from "@mui/icons-material";
 import Link from "@mui/material/Link"; // Ensure Link is imported correctly
 import "./Register.css";
 
+// Component to Display the Register Page
 const Register = () => {
   const navigate = useNavigate();
 

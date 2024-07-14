@@ -1,6 +1,7 @@
 import React from "react";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
+// Component to Display the Likes of the blog
 function Likes({ likes, handleLikes }) {
   return (
     <>

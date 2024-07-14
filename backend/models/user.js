@@ -1,3 +1,5 @@
+// Creating the Mongoose Model for the User MongoDB Database
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 

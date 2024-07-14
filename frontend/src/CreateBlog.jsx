@@ -6,6 +6,8 @@ import "./CreateBlog.css";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
+// Component to Display Create Blog Form
+
 function CreateBlog() {
   const navigate = useNavigate();
 

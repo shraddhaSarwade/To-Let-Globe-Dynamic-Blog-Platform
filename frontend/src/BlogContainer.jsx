@@ -5,6 +5,7 @@ import BlogCard from "./BlogCard";
 import Pagination from "./Pagination";
 import Toggle from "./Toggle";
 
+// Component to Display Six Blogs from all Blog Data in Card form
 function BlogContainer() {
   const [backendData, setBackendData] = useState([{}]);
 

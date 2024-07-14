@@ -1,3 +1,5 @@
+// Seed Data to Seed the Database
+
 module.exports = [
   {
     title: "Collaboration and Partnership Update!",

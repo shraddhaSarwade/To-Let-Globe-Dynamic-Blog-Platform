@@ -10,6 +10,7 @@ import AuthorDetails from "./AuthorDetails";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+//Component to display a Blog Card in all Blogs Page
 const BlogCard = ({
   id,
   title,

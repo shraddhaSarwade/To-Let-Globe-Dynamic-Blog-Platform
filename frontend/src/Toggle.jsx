@@ -3,6 +3,7 @@ import "./Toggle.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+// Component to Render the Latest, Tending and Create Blog Buttons
 function Toggle({ isLatest, handleClickLatest, handleClickTrending }) {
   const navigate = useNavigate();
 

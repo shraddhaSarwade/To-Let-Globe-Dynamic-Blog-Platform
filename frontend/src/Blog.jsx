@@ -8,6 +8,7 @@ import AuthorDetails from "./AuthorDetails";
 import "./Blog.css";
 import axios from "axios";
 
+// Component to Display a Single Blog
 function Blog() {
   const { id } = useParams();
 

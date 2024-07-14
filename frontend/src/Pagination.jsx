@@ -3,6 +3,7 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import "./Pagination.css";
 
+// Component for the Pagination
 function Pagination({ noOfBlogs, paginate, currentPg }) {
   const paginationLIs = [];
   const totalPgs = Math.ceil(noOfBlogs / 6);

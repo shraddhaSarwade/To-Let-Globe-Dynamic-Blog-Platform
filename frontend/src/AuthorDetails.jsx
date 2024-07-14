@@ -1,6 +1,7 @@
 import React from "react";
 import "./AuthorDetails.css";
 
+// Component to Display Author Details like Username, Role, and User Img Icon
 function AuthorDetails({ author, role }) {
   return (
     <div className="container">

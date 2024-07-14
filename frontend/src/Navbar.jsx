@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import axios from "axios";
 
+// Component to Display the Navbar
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 

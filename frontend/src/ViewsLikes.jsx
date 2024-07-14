@@ -2,6 +2,7 @@ import React from "react";
 import Views from "./Views";
 import Likes from "./Likes";
 
+// Component Clubbing the Views and Likes Component
 function ViewsLikes({ views, likes }) {
   return (
     <div class="container">

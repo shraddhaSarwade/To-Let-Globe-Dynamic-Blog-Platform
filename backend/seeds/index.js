@@ -1,3 +1,5 @@
+// File for Seeding Databse With Intial Blog Data
+
 const blog_seed_data = require("./seed_data");
 const Blog = require("../models/blogs");
 const mongoose = require("mongoose");

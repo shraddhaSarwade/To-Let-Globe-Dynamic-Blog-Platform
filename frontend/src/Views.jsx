@@ -1,6 +1,7 @@
 import React from "react";
 import VisibilityTwoToneIcon from "@mui/icons-material/VisibilityTwoTone";
 
+// Component to Display the Views of a Blog
 function Views({ views }) {
   return (
     <>
