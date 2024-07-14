@@ -1,6 +1,7 @@
 // requiring the Packages
 
-require("dotenv").config();
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 
 const express = require("express");
 const app = express();
@@ -14,12 +15,12 @@ const multer = require("multer");
 const { storage } = require("./cloudinary");
 
 // Defining the MongoDB Atlas URL
-// const mongoDBAtlasURL = process.env.DB_URL;
+const mongoDBURL =
+  process.env.DB_URL || "mongodb://localhost:27017/To-Let-Globe-Blogs";
 
 // Setting up the Database Connection
 mongoose
-  // .connect(mongoDBAtlasURL)
-  .connect("mongodb://localhost:27017/To-Let-Globe-Blogs")
+  .connect(mongoDBURL)
   .then(() => {
     console.log("Connected to database..");
   })

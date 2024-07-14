@@ -1,12 +1,15 @@
 // File for Seeding Databse With Intial Blog Data
-
+const path = require("path");
+require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const blog_seed_data = require("./seed_data");
 const Blog = require("../models/blogs");
 const mongoose = require("mongoose");
 
+const mongoDBURL =
+  process.env.DB_URL || "mongodb://localhost:27017/To-Let-Globe-Blogs";
+
 mongoose
-  // .connect(mongoDBAtlasURL)
-  .connect("mongodb://localhost:27017/To-Let-Globe-Blogs")
+  .connect(mongoDBURL)
   .then(() => {
     console.log("Connected to database..");
   })
